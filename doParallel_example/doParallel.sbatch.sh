@@ -11,6 +11,7 @@
 
 # From https://rcc.uchicago.edu/docs/software/environments/R/index.html
 
+module unload R
 module load R/3.2+intel-15.0
 
 R CMD BATCH --no-save --no-restore doParallel.R
