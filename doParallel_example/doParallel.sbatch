@@ -7,10 +7,12 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=10
 #SBATCH --mem-per-cpu=2000
+#SBATCH --mail-type=END,FAIL,TIME_LIMIT
+#SBATCH --mail-user=kgostic
 
 
 # From https://rcc.uchicago.edu/docs/software/environments/R/index.html
 
 module load R
 
-R CMD BATCH --no-save --no-restore doParallel.R --var 5 --char "testString"
+Rscript doParallel.R --var 5 --char "testString"
